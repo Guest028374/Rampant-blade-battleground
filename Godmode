@@ -1,0 +1,17 @@
+getgenv().GodMode = true
+
+if not Already then
+
+   getgenv().Already = true
+
+   while task.wait(1) do
+
+       if GodMode then
+
+           game:GetService("ReplicatedStorage").RemoteEvents.RoyalGauntletsSkill1:FireServer()
+
+       end
+
+   end
+
+end
