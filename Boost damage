@@ -1,0 +1,23 @@
+local multiplier = 5 -- more than 10 could cause lag
+
+local old;
+
+old = hookmetamethod(game,"__namecall", function(...)
+
+   local args = {...}
+
+   if getnamecallmethod() == "FireServer" and args[2] ~= nil and type(args[2]) == "table" and args[2]["attack"] then
+
+       for i = 1,multiplier do
+
+           old(...)
+
+       end
+
+       return
+
+   end
+
+   return old(...)
+
+end)
